@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>食品列表</h1>
+{% for food in foods%}
+    <a href="{% url 'food:show' food.id %}">{{food.food}}</a>
+{% endfor %}
+<br>
+<br>
+<a href="{% url 'food:new' %}">新增</a>
+{% endblock %}

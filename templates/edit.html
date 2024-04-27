@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>編輯產品資訊</h1>
+<form action="{% url 'food:add'%}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="food">品項：</label>
+        <input type="text" name="food" id="food" value="{{food.food}}">
+    </div>
+    <div>
+        <label for="price">價格：</label>
+        <input type="text" name="price" id="price" value="{{food.price}}">
+    </div>
+    <div>
+        <label for="date">保存期限：</label>
+        <input type="text" name="date" id="date" value="{{food.date}}">
+    </div>
+    <input type="submit" value="提交">
+</form>
+{% endblock %}

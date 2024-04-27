@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1>產品展示頁</h1>
+    <div>
+        <h3>品項：</h3>
+        {{food.food}}
+    </div>
+    <div>
+        <h3>價格：</h3>
+        {{food.price}}
+    </div>
+    <div>
+        <h3>保存期限：</h3>
+        {{food.date}}
+    </div>
+    <br>
+    <br>
+    <a href="{% url 'food:edit' food.id%}">編輯產品</a>
+    <form action="{% url 'food:delete' food.id %}" method="POST">
+        {% csrf_token %}
+        <button>刪除產品</button>
+    </form>
+{% endblock %}
