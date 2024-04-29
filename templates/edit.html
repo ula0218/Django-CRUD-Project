@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>編輯產品資訊</h1>
-<form action="{% url 'food:add'%}" method="POST">
+<form action="{% url 'food:show' food.id %}" method="POST">
     {% csrf_token %}
     <div>
         <label for="food">品項：</label>
