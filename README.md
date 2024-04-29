@@ -7,6 +7,8 @@
 
 2.Add the following lines to the settings.py of your file
 
+(If can't use ,please remove app's __pycache__ folder)
+
 ```
     INSTALLED_APPS = [
          ...
